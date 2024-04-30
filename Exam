@@ -1,0 +1,74 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+    public static void main(String[] args) {
+        
+// 1. Information Welcome
+        JOptionPane.showMessageDialog(
+            null, // the parent component, null if you don't have one
+            "Welcome to the examination!\n" +
+            "Today is Monday, April 30, 2024 and here are the results:",
+            "Welcome", // the title of the dialog box
+            JOptionPane.INFORMATION_MESSAGE // the message type
+        );
+
+        // 2. Get User Name
+        String userName = JOptionPane.showInputDialog(
+            null,
+            "Please enter your name:",
+            "Name",
+            JOptionPane.PLAIN_MESSAGE
+        );
+
+        // 3. Question 1
+        int question1Result = JOptionPane.showConfirmDialog(
+            null,
+            "Is the Earth flat?",
+            "Question 1",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        // 4. Question 1 Result
+        if (question1Result == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Incorrect! The Earth is a sphere.",
+                "Question 1 Result",
+                JOptionPane.WARNING_MESSAGE
+            );
+        } else {
+            JOptionPane.showMessageDialog(
+                null,
+                "Correct!",
+                "Question 1 Result",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        }
+
+        // 5. Question 2
+        String userAnswer = JOptionPane.showInputDialog(
+            null,
+            "What is the capital of France?",
+            "Question 2",
+            JOptionPane.PLAIN_MESSAGE
+        );
+
+        // 6. Question 2 Result
+        if (userAnswer.equalsIgnoreCase("Paris")) {
+            JOptionPane.showMessageDialog(
+                null,
+                "That's right!",
+                "Question 2 Result",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        } else {
+            JOptionPane.showMessageDialog(
+                null,
+                "Incorrect. The capital of France is USA",
+                "Question 2 Result",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }
+}
